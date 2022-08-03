@@ -23,12 +23,14 @@ const routes = [
   {
     path: '/cars',
     name: 'Cars',
-    component: Products
+    component: Products,
+    props:true
   }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode:'history'
 })
 
 export default router

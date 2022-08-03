@@ -55,12 +55,12 @@
         <b-form-timepicker v-model="pickTime" locale="en"></b-form-timepicker>
       </div>
       <hr>
-      <label for="selectdate">Return Date</label>
+      <label for="selectReturnDate">Return Date</label>
       <div class="timeAnddate">
-        <b-form-datepicker id="selectdate" v-model="returnDate" class="mr-2"></b-form-datepicker>
+        <b-form-datepicker id="selectReturnDate" v-model="returnDate" class="mr-2"></b-form-datepicker>
         <b-form-timepicker v-model="returnTime" locale="en" class="mr-2"></b-form-timepicker>
       </div>
-      <b-button class="mt-3" block variant="outline-primary">Search</b-button>
+      <b-button class="mt-3" @click="goRent()" block variant="outline-primary">Search</b-button>
 
     </b-form>
   </div>
@@ -78,7 +78,10 @@ export default {
       pickDate:'',
       pickTime:'',
       returnDate:'',
-      returnTime:''
+      returnTime:'',
+      userInfo:[
+
+      ]
     }
   },
   methods: {
@@ -87,6 +90,11 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
+    },
+    goRent(){
+      this.userInfo.push(this.locationValue,this.returnlocationValue,this.pickDate,this.pickTime,this.returnDate,this.returnTime)
+      const userInfo= this.userInfo;
+      this.$router.push({name:'Cars',params:{userData:userInfo}})
     }
   }
 }

@@ -7,9 +7,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#" > <b-icon-house-door></b-icon-house-door> Home</b-nav-item>
-          <b-nav-item href="#"><b-icon-x-diamond></b-icon-x-diamond> Rent</b-nav-item>
-          <b-nav-item href="#"><b-icon-info-circle></b-icon-info-circle> About Us</b-nav-item>
+          <b-nav-item href="/" > <b-icon-house-door></b-icon-house-door> Home</b-nav-item>
+          <b-nav-item href="/cars"><b-icon-x-diamond></b-icon-x-diamond> Rent</b-nav-item>
+          <b-nav-item href="/about"><b-icon-info-circle></b-icon-info-circle> About Us</b-nav-item>
           <b-nav-item href="#"><b-icon-chat-left-dots></b-icon-chat-left-dots>  Contact</b-nav-item>
 
         </b-navbar-nav>
