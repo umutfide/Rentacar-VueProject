@@ -1,12 +1,13 @@
 <template>
   <div class="cardRow">
     {{userData}}
-    <car-list :item="item" class="cardDizilim" v-for="i in 20":key="i"/>
+    <car-list :item="dataJS.data[index]" class="cardDizilim" v-for="(i,index) in dataJS.data.length":key="index"/>
   </div>
 </template>
 
 <script>
 import CarList from "../components/CarList"
+import dataJS from "../assets/datas.json"
 export default {
   components: {
     CarList
@@ -17,7 +18,8 @@ export default {
   data(){
     return{
       item:
-        ['Toros', 'About car...',1500]
+        ['Toros', 'About car...',1500],
+        dataJS : dataJS
     }
   }
 }
